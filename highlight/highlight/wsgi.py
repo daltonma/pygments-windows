@@ -15,4 +15,4 @@ from whitenoise import WhiteNoise
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'highlight.settings')
 
 application = get_wsgi_application()
-application = WhiteNoise(application, root=os.path.abspath(os.path.dirname(__name__)) + "/highlightapp/static/")
+application = WhiteNoise(application)

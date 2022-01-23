@@ -14,8 +14,8 @@ from pygments.lexers.c_cpp import CLexer, CppLexer
 from pygments.lexers.shell import BashLexer, BashSessionLexer, FishShellLexer
 from pygments.lexers.html import HtmlLexer
 from pygments.lexers.markup import MarkdownLexer
-from weasyprint import CSS, HTML
-from weasyprint.fonts import FontConfiguration
+# from weasyprint import CSS, HTML
+# from weasyprint.fonts import FontConfiguration
 
 env = Environment(
     loader=PackageLoader("highlightapp"),

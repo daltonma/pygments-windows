@@ -9,7 +9,7 @@ from sys import argv, exit
 import cherrypy
 
 if __name__ == '__main__':
-    if not sys.argv[1]:
+    if not argv[1]:
         exit(1)
     # Mount the application
     cherrypy.tree.graft(application, "/")

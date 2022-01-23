@@ -5,7 +5,7 @@ This file provides views for the Pygments Web App.
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
-from jinja2 import Environment, PackageLoader, select_autoescape
+# from jinja2 import Environment, PackageLoader, select_autoescape
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import get_lexer_by_name
@@ -105,10 +105,10 @@ def topdf(request, language=""):
         css = CSS(string=rainbow, font_config=font_config)
         html = HTML(string=htmlresult)
         # Write PDF
-        pdfresult = html.write_pdf(
-            presentational_hints=True, stylesheets=[css], font_config=font_config)
+        # pdfresult = html.write_pdf(
+            # presentational_hints=True, stylesheets=[css], font_config=font_config)
         # Create response headers
-        response = HttpResponse(pdfresult, content_type='application/pdf;')
+        response = HttpResponse(status=200)
         response['Content-Disposition'] = 'inline; filename=code.pdf'
         response['Content-Transfer-Encoding'] = 'binary'
         # Send response

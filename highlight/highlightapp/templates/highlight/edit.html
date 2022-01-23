@@ -1,5 +1,5 @@
 {% extends "highlight/layout.html" %} 
-{% block title %} Editor {% endblock %} 
+{% block title %} {{ language }} {% endblock %} 
 {% block body %}
 <script src="/static/ace-builds/src-noconflict/ace.js"></script>
 <script>
@@ -24,22 +24,22 @@
       // $("#downloadu").attr("download", "code.html");
     });
     // get pdf
-    $.ajax({
-      method: "POST",
-      url: "/pdf/{{ language }}/",
-      xhrFields: {
-        responseType: "blob",
-      },
-      data: { code: value, csrfmiddlewaretoken: token, title:title },
-    }).done(function (data) {
-      // Add download link to blob
-      blob = new Blob([data], { type: "application/pdf" });
-      renderedcode = URL.createObjectURL(blob);
-      // Directly download
-      $("#download").html("<a id='downloadu' href='#'>Download</a>");
-      $("#downloadu").attr("href", renderedcode);
-      $("#downloadu").attr("download", "code.pdf");
-    });
+    // $.ajax({
+    //   method: "POST",
+    //   url: "/pdf/{{ language }}/",
+    //   xhrFields: {
+    //     responseType: "blob",
+    //   },
+    //   data: { code: value, csrfmiddlewaretoken: token, title:title },
+    // }).done(function (data) {
+    //   // Add download link to blob
+    //   blob = new Blob([data], { type: "application/pdf" });
+    //   renderedcode = URL.createObjectURL(blob);
+    //   // Directly download
+    //   // $("#download").html("<a id='downloadu' href='#'>Download</a>");
+    //   // $("#downloadu").attr("href", renderedcode);
+    //   // $("#downloadu").attr("download", "code.pdf");
+    // });
   }
 </script>
 <style type="text/css" media="screen">

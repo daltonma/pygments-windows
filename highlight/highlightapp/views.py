@@ -17,10 +17,10 @@ from pygments.lexers.markup import MarkdownLexer
 # from weasyprint import CSS, HTML
 # from weasyprint.fonts import FontConfiguration
 
-env = Environment(
-    loader=PackageLoader("highlightapp"),
-    autoescape=select_autoescape()
-)
+# env = Environment(
+#     loader=PackageLoader("highlightapp"),
+#     autoescape=select_autoescape()
+# )
 
 
 rainbow = HtmlFormatter(style="rainbow_dash").get_style_defs(".highlight")
@@ -98,8 +98,8 @@ def topdf(request, language=""):
         formatter = HtmlFormatter(linenos="inline")
         result = highlight(code, highlighter, formatter)
         # Render template
-        template = env.get_template("highlight/topdf.html")
-        htmlresult = template.render(highlight=result, title=title)
+        # template = env.get_template("highlight/topdf.html")
+        # htmlresult = template.render(highlight=result, title=title)
         # Pdf
         # Render CSS and HTML
         css = CSS(string=rainbow, font_config=font_config)

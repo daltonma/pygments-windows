@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     # Instantiate a new server object
     server = cherrypy._cpserver.Server()
-    port = int(sys.argv[1])
+    port = int(argv[1])
     # Configure the server object
     server.socket_host = "0.0.0.0"
     server.socket_port = port
